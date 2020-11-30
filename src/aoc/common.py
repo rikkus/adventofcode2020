@@ -1,16 +1,17 @@
 from os import path
-from toml import load as toml_load
-
-answers: dict = toml_load('test_answers.toml')
-
-
-def answer(day: int, part: int) -> str:
-    return answers[str(day)][str(part)]
+from rtoml import load as toml_load
 
 
 def read_file(file_path) -> str:
     with open(file_path) as f:
         return f.read().rstrip()
+
+
+answers: dict = toml_load(read_file('answers.toml'))
+
+
+def answer(day: int, part: int) -> str:
+    return answers[str(day)][str(part)]
 
 
 def data(day_number, part_number) -> str:
