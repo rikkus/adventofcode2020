@@ -1,26 +1,21 @@
-def helper_needs_testing_too(s: str) -> str:
-    return s[::-1]
+def numbers(input_data):
+    return (int(x) for x in input_data.split("\n"))
 
 
 def part_one(input_data):
-    floor = 0
-    for c in input_data:
-        if c == '(':
-            floor += 1
-        else:
-            floor -= 1
-    return floor
+    nums = numbers(input_data)
+    seen = set()
+    for n in nums:
+        if 2020 - n in seen:
+            return (2020 - n) * n
+        seen.add(n)
 
 
 def part_two(input_data):
-    floor = 0
-    pos = 0
-    for c in input_data:
-        if c == '(':
-            floor += 1
-        else:
-            floor -= 1
-        if floor < 0:
-            return pos + 1
-        pos += 1
-
+    nums = numbers(input_data)
+    seen = set()
+    for n in nums:
+        for s in seen:
+            if 2020 - n - s in seen:
+                return n * s * (2020 - n - s)
+        seen.add(n)

@@ -9,7 +9,7 @@ all_days_both_parts : [(int, int)] = [
     (2, 2),
 ]
 
-days_and_parts_to_test_now = [(1, 1)]
+days_and_parts_to_test_now = [(1, 1), (1, 2)]
 
 
 @pytest.mark.parametrize('day,part', days_and_parts_to_test_now)
@@ -22,7 +22,3 @@ def test_part(day, part):
     elif part == 2:
         assert module.part_two(data) == answer
 
-
-def test_day_1_helper_thing():
-    from src.aoc.day1 import helper_needs_testing_too
-    assert helper_needs_testing_too('desrever') == 'reversed'
