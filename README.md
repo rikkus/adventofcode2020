@@ -1,5 +1,3 @@
 # Advent of Code 2020
 
-Solutions to [Advent of Code 2020](https://adventofcode.com/2020)
-
-Probably in Python.
+Code moved [here](https://git.sr.ht/~rikkus/adventofcode2020/tree/main/src/aoc)
